@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LogService } from '@app/shared/log.service';
+import { LogService } from '@app/services/log.service';
 
 @Component({
   selector: 'ngprj-home',

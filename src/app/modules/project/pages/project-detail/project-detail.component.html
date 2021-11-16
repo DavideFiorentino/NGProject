@@ -1,0 +1,20 @@
+<ngprj-section-header [title]="'I miei Progetti'" [button]="{ label:'Vai ai Progetti', link: '/projects' }">
+</ngprj-section-header>
+
+<ng-container *ngIf="project$ | async as project">
+    <div class="container-fluid py-5">
+        <ngprj-card>
+            <ng-container data-body>
+                <h1 class="display-5 fw-bold">{{ project.name }}</h1>
+                <h2>{{ project.start | date }}</h2>
+            </ng-container>
+            <ng-container data-footer>
+                <p class="col-md-8 fs-4">{{ project.description }}</p>
+            </ng-container>
+        </ngprj-card>
+    </div>
+</ng-container>
+
+<hr>
+
+<ngprj-project-form-rf></ngprj-project-form-rf>

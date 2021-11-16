@@ -9,6 +9,7 @@ import { Project } from '@app/models/Project';
 export class ProjectListComponent implements OnInit {
   @Input() projects: Project[] = [];
   @Output() selected = new EventEmitter<Project>();
+  @Output() deleted = new EventEmitter<Project>();
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class ProjectListComponent implements OnInit {
 
   select(project: Project) {
     this.selected.emit(project);
+  }
+
+  delete(projectDeleted: Project) {
+    this.deleted.emit(projectDeleted)
   }
 
 }
